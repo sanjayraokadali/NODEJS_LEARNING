@@ -1,10 +1,14 @@
 const express = require('express');
+const path = require('path');
 
 const routes = express.Router();
 
+function returnPath(){
+    return path.join(__dirname, '../', 'views');
+};
+
 routes.get('/', (req, res, next) =>{
-    console.log("index");
-    res.send('<h3>Index Page</h3>');
+    res.sendFile(path.join(returnPath(), 'index.html'));
 });
 
 

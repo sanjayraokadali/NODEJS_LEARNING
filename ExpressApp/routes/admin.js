@@ -1,17 +1,15 @@
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
+function returnPath(){
+    return path.join(__dirname, '../', 'views');
+};
+
 router.get('/add-product', (req, res, next) =>{ // TAKES IN A GET REQUEST
 
-    console.log('/add-product');
-
-    res.send('<form action="/admin/product" method="POST"> \
-             \
-             <input type="text" name="productname"> \
-             <input type="submit" value="add product">\
-             </form>\
-             ');
+    res.sendFile(path.join(returnPath(), 'add-product.html'));
 
 });
 
