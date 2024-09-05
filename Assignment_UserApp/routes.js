@@ -9,7 +9,7 @@ const requestHandler = (req, res) => {
 
         res.write('<html>');
         res.write('<head><title>Index</title></head>');
-        res.write('<body><h3>User Page</h3>');
+        res.write('<body><h3>User App</h3>');
 
         res.write('<form method="POST" action="/users"> \
                     <input type="submit" value="User list">\
