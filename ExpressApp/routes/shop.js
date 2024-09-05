@@ -1,14 +1,11 @@
 const express = require('express');
 const path = require('path');
+const rootPath = require('../utils/path');
 
 const routes = express.Router();
 
-function returnPath(){
-    return path.join(__dirname, '../', 'views');
-};
-
 routes.get('/', (req, res, next) =>{
-    res.sendFile(path.join(returnPath(), 'index.html'));
+    res.sendFile(path.join(rootPath, 'index.html'));
 });
 
 
