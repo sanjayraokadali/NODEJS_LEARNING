@@ -1,0 +1,15 @@
+extends base
+
+block content 
+    h4 HomePage
+
+    p #{i.length}
+
+    if i.length == 2
+        p No Products
+    else
+        ul 
+            each item in i 
+                li 
+                    p #{item.name}
+                    p #{item.age}   

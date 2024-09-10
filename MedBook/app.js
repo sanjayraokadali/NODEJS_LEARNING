@@ -3,6 +3,9 @@
 const express = require('express');
 const app = express();
 
+app.set('view machine', 'pug'); // Allows to set values globally in the entire App progress.
+app.set('views', 'views');
+
 const bodyParser = require('body-parser');
 const router = require('./routes/base');
 
