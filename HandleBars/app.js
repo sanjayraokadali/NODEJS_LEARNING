@@ -4,9 +4,8 @@ const app = express();
 const body = require('body-parser');
 const expressHbs = require('express-handlebars');
 
-app.engine('hbs', expressHbs());
+app.engine('hbs', expressHbs.engine({extname: '.hbs', defaultLayout: 'index'}));
 app.set('view engine', 'hbs');
-app.set('views', 'views');
 
 const router = require('./routes/root');
 
