@@ -2,13 +2,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res)=>{
-
-    const title = "Index Page";
-    const content = "Some shitty content";
-
-    res.render('homepage.hbs', {title: title, content: content});
-});
 
 router.get('/user-form', (req,res)=>{
     res.render('user-form.hbs');
@@ -26,5 +19,13 @@ router.post('/submit-user-form', (req, res)=>{
     }
     
 })
+
+router.get('/', (req, res)=>{
+
+    const title = "Index Page";
+    const content = "Some shitty content";
+
+    res.render('homepage.hbs', {title: title, content: content});
+});
 
 module.exports = router;

@@ -12,6 +12,11 @@ const router = require('./routes/root');
 app.use(body.urlencoded({extended:false}));
 app.use(router);
 
+app.get((req,res, next)=>{
+
+    res.status(404).write('<h3> 404 Page NOt Found</h3>');
+});
+
 
 
 app.listen('3005');
