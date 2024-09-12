@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../util/database');
 
 module.exports = class User {
 
@@ -29,6 +30,17 @@ module.exports = class User {
     }
 
     save(){
-        fs.writeFileSync('./users/'+this.username+'.txt', this.username);
+
+        db.execute("SELECT * from world.city limit 1;")
+            .then(result => {
+                const data = result[0];
+                console.log(data);
+                fs.writeFileSync('./users/'+this.username+'.txt', JSON.stringify(data));
+            })
+            .catch(err =>{
+                const result = err
+            });
+
+        
     }
 }

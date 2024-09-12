@@ -3,13 +3,13 @@
     "body-parser": "^1.20.3",
     "express": "^4.20.0",
     "express-handlebars": "^8.0.1",
+    "mysql2": "^3.11.2",
     "nodemon": "^3.1.4"
   },
   "name": "ibank",
   "version": "0.0.1",
   "description": "Personal Banking App",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
