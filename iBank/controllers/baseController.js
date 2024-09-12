@@ -1,3 +1,5 @@
+const User = require('../models/user');
+
 
 exports.Home = (req, res)=>{
 
@@ -12,4 +14,16 @@ exports.Login = (req,res)=>{
 exports.Register = (req,res)=>{
 
     res.render('register-user.hbs');
+}
+
+
+exports.UserAccount = (req,res)=>{
+
+    const user = new User(req.body.username, req.body.email, req.body.phone);
+    user.save();
+
+    res.render("user-account.hbs", {user: user});
+
+    
+
 }
