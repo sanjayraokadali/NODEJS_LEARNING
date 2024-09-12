@@ -1,19 +1,13 @@
 
 const express = require('express');
 const router = express.Router();
+const baseController = require('../controllers/baseController');
 
 
-router.get('/register-user', (req,res)=>{
-    res.render('register-user.hbs')
-})
+router.get('/register-user', baseController.Register );
 
-router.get('/login', (req,res)=>{
-    res.render('login.hbs');
-});
+router.get('/login', baseController.Login );
 
-router.get('/', (req, res)=>{
-
-    res.render('homepage.hbs');
-});
+router.get('/', baseController.Home);
 
 module.exports = router;
